@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [svelte()],
   optimizeDeps: {
     exclude: ['hardhat', '@nomicfoundation/hardhat-toolbox']
-  }
+  },
+  publicDir: './src/public'
 })
