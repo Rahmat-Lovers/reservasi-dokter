@@ -162,7 +162,7 @@ def register(request: HttpRequest, payload: RegisterSchema):
 
         customer = Customer(
             user_id = user.id,
-            name = payload.username,
+            name = payload.name,
             gender = payload.gender,
             birthday = payload.birthday,
             photo = payload.photo
