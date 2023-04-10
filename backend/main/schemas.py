@@ -8,7 +8,7 @@ class RegisterSchema(Schema):
     password: str
     name: str
     gender: int
-    birthday: date
+    birthday: Optional[date]
     photo: Optional[UploadedFile]
 
 class LoginSchema(Schema):
