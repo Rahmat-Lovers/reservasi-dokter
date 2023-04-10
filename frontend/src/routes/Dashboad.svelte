@@ -30,18 +30,18 @@
     })();
 </script>
 
-
+<!-- 
 <div class=" flex justify-center items-center fixed top-0 left-0 opacity-0 sm:opacity-100 sm:w-screen sm:h-screen  sm:bg-black text-red-500 text-center z-50">
     <h1 class=" mx-auto text-4xl">!! Masih dalam tahap production !!</h1>
 </div>
-
+ -->
 
 <div class=" bg-white  h-screen">
     <!-- ========================================       HEADER      ========================================== -->
     <div class=" h-12 w-[360px] mx-auto bg-[#1363DF] flex justify-around items-center">
-        <div class=" h-7 w-64 mx-auto bg-slate-100 rounded-3xl">
+        <div class=" relative h-7 w-64 mx-auto bg-slate-100 rounded-3xl">
             <input type="text" class=" w-full h-full rounded-lg relative">
-            <span class="inline-block absolute top-[10px] left-6"><img src="/img/search.png" alt="icon search bar" class=" w-6 h-6 inline-block"></span>
+            <span class="inline-block absolute top-0 left-2"><img src="/img/search.png" alt="icon search bar" class=" w-6 h-6 inline-block"></span>
         </div>
         <div class=" w-8 h-8 mx-auto rounded-lg "><img src="/img/notification.png" alt="icon notification" class=" w-6 h-6 mt-1 mx-auto"></div>
     </div>
