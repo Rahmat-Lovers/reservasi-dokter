@@ -15,11 +15,11 @@
 </script>
 
 {#if isLoading}
-<div class="min-h-screen w-full fixed flex items-center left-[46%] z-50">
+<div class="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center">
     <div role="status" class="p-3 bg-white rounded shadow-lg">
         <svg
             aria-hidden="true"
-            class="w-20 h-20 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+            class="w-20 h-20 text-gray-200 animate-spin fill-blue-600"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
