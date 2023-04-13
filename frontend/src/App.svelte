@@ -3,7 +3,7 @@
     import { Router, Route, navigate } from "svelte-routing";
     import Index from "./routes/Index.svelte";
     import Login from "./routes/Login.svelte";
-    import Dashboad from "./routes/Dashboad.svelte";
+    import Dashboard from "./routes/Dashboard.svelte";
     import Register from "./routes/Register.svelte";
     import axios from "axios";
     import cookie from "cookie";
@@ -35,7 +35,7 @@
             <Route path="/" component={Index} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/dashboard" component={Dashboad} />
+            <Route path="/dashboard" component={Dashboard} />
         </Router>
     </div>
 </main>

@@ -11,6 +11,7 @@ class Customer(models.Model):
     birthday = models.DateField(null = True, blank = True)
     photo = models.ImageField(null = True, blank = True)
     address = models.CharField(max_length = 255, null = True, blank = True)
+    followed = models.ManyToManyField('main.Doctor', related_name = '+')
 
 
 class Doctor(models.Model):

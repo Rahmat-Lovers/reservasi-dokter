@@ -173,6 +173,7 @@ def register(request: HttpRequest, payload: RegisterSchema):
 @api.get('/doctors')
 def doctors(request: HttpRequest, query: str = None, specialist: int = None):
     queryset = Doctor.objects.all()
+    logedCustomer = Customer.objects.get(user__id = request.auth.id)
 
     if specialist:
         queryset = queryset.filter(specialist__id = specialist)
@@ -204,9 +205,10 @@ def doctors(request: HttpRequest, query: str = None, specialist: int = None):
         }
 
         keren['specialist'] = list(x.specialist.values())
+        keren['followed'] = x.id in [y.id for y in logedCustomer.followed.all()]
 
         rv.append(keren)
-    
+
     return {
         'data': rv
     }
@@ -214,6 +216,7 @@ def doctors(request: HttpRequest, query: str = None, specialist: int = None):
 @api.get('/doctor/{doctor_id}')
 def doctor(request: HttpRequest, doctor_id: int):
     doctor = Doctor.objects.filter(id = doctor_id).first()
+    logedCustomer = Customer.objects.get(user__id = request.auth.id)
     if not doctor:
         raise NinjaValidationError([{'doctor_id':'not found'}])
 
@@ -234,7 +237,30 @@ def doctor(request: HttpRequest, doctor_id: int):
 
     keren['specialist'] = list(doctor.specialist.values())
 
+    keren['followed'] = doctor.id in [y.id for y in logedCustomer.followed.all()]
     return keren
+
+@api.post('/follow/{doctor_id}')
+def doctor(request: HttpRequest, doctor_id: int):
+    doctor = Doctor.objects.filter(id = doctor_id).first()
+    if not doctor:
+        raise NinjaValidationError([{'doctor_id':'not found'}])
+    
+    customer = Customer.objects.filter(user__id = request.auth.id).first()
+    if customer:
+        customer.followed.add(doctor)
+        return {'success':True}
+    
+@api.delete('/follow/{doctor_id}')
+def doctor(request: HttpRequest, doctor_id: int):
+    doctor = Doctor.objects.filter(id = doctor_id).first()
+    if not doctor:
+        raise NinjaValidationError([{'doctor_id':'not found'}])
+    
+    customer = Customer.objects.filter(user__id = request.auth.id).first()
+    if customer:
+        customer.followed.remove(doctor)
+        return {'success':True}
 
 @api.post('/schedule')
 @check_error(CreateScheduleForm)
