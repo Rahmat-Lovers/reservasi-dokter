@@ -7,6 +7,7 @@
     import Register from "./routes/Register.svelte";
     import axios from "axios";
     import cookie from "cookie";
+    import SearchDoctor from "./routes/SearchDoctor.svelte";
 
     let token;
 
@@ -36,6 +37,7 @@
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/dashboard" component={Dashboard} />
+            <Route path="/search" component={SearchDoctor} />
         </Router>
     </div>
 </main>

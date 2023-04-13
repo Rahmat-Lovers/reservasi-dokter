@@ -1,5 +1,6 @@
 <script>
-    import Loading from "../components/Loading.svelte";
+    import Loading from "../components/Loading.svelte"
+    import Navbar from "../components/Navbar.svelte";
     import axios from "axios";
     import cookie, { parse } from "cookie";
     import { getDistanceYear } from "../helpers";
@@ -35,34 +36,17 @@
 
 <div>
     <!-- ========================================       HEADER      ========================================== -->
-    <div
-        class=" h-12 w-[360px] mx-auto bg-[#1363DF] flex justify-around items-center"
-    >
-        <div class=" relative h-7 w-64 mx-auto bg-slate-100 rounded-3xl">
-            <input
-                type="text"
-                class=" w-full h-full rounded-lg relative pl-8 outline-none"
-            />
-            <span class="inline-block absolute top-0 left-2"
-                ><img
-                    src="/img/search.png"
-                    alt="icon search bar"
-                    class=" w-6 h-6 inline-block"
-                /></span
-            >
+    <div class="fixed top-0 left-1/2 -translate-x-1/2  h-12 w-[360px] mx-auto bg-[#1363DF] flex justify-around items-center z-50">
+        <div class="relative h-7 w-72 mx-auto bg-slate-100 rounded-2xl">
+            <input type="text" class="relative w-full h-full pl-8 rounded-lg outline-none text-xs">
+            <span class=" absolute w-5 h-5 top-1 left-2 z-10"><img src="/img/search.png" alt="icon search" class=" w-5 h-5"></span>
         </div>
-        <div class=" w-8 h-8 mx-auto rounded-lg">
-            <img
-                src="/img/notification.png"
-                alt="icon notification"
-                class=" w-6 h-6 mt-1 mx-auto"
-            />
-        </div>
+        <div class=" w-7 h-7 mx-auto -ml-2 rounded-md bg-slate-100 "><img src="/img/notification.png" alt="icon notification" class=" w-4 h-4 mx-auto mt-1.5 "></div>
     </div>
 
     <!-- ========================================     CARD INFO      ========================================== -->
     <div
-        class=" h-32 my-4 w-[330px] mx-auto bg-[#3DB2FF] rounded-lg overflow-hidden"
+        class="mt-16 h-32 my-4 w-[330px] mx-auto bg-[#3DB2FF] rounded-lg overflow-hidden"
     >
         <div class=" flex items-center h-16 w-80">
             <div class=" w-10 h-10 mx-4 bg-white rounded-full" />
@@ -254,53 +238,5 @@
     </div>
 
     <!-- ======================================     NAVIGATION BAR    ======================================== -->
-    <div
-        class=" w-[360px] h-12 fixed bottom-0 left-[50%] -translate-x-1/2 flex justify-around items-center flex-wrap mx-auto font-semibold bg-slate-50 shadow-sm shadow-gray-500"
-    >
-        <div class="relative w-10 h-auto">
-            <div
-                class=" w-6 h-6 top-0 left-0 translate-x-2 bg-slate-400 rounded-full"
-            />
-            <span class=" block w-7 h-auto mx-auto text-[8px] tracking-wide"
-                >Beranda</span
-            >
-        </div>
-
-        <div class="relative w-auto h-auto text-center">
-            <div
-                class=" w-6 h-6 top-0 left-0 translate-x-2 bg-slate-400 rounded-full"
-            />
-            <span class=" block w-auto h-auto mx-auto text-[8px] tracking-wide"
-                >Cari Dokter</span
-            >
-        </div>
-
-        <div class="relative w-10 h-auto text-center">
-            <div
-                class=" w-6 h-6 top-0 left-0 translate-x-2 bg-slate-400 rounded-full"
-            />
-            <span class=" block w-7 h-auto mx-auto text-[8px] tracking-wide"
-                >Riwayat</span
-            >
-        </div>
-
-        <div class="relative w-10 h-auto text-center">
-            <div
-                class=" w-6 h-6 top-0 left-0 translate-x-2 bg-slate-400 rounded-full"
-            />
-            <span class=" block w-7 h-auto mx-auto text-[8px] tracking-wide"
-                >Akun</span
-            >
-        </div>
-    </div>
-
-    <!-- 
-    <div class=" w-[360px] h-14 fixed bottom-0 left-0 flex justify-around items-center flex-wrap mx-auto bg-blue-500 ">
-        <div class=" w-6 h-6 bg-slate-100 rounded-full"></div>
-        <div class=" w-6 h-6 bg-slate-100 rounded-full"></div>
-        <div class=" w-6 h-6 bg-slate-100 rounded-full"></div>
-        <div class=" w-6 h-6 bg-slate-100 rounded-full"></div>
-    </div> -->
-
-    <!-- AFE5FF -->
+    <Navbar />
 </div>
