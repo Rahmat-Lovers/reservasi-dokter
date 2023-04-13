@@ -1,18 +1,44 @@
 <script>
-    import Loading from "../components/Loading.svelte"
+    import { onDestroy, onMount } from "svelte";
+
+    import Loading from "../components/Loading.svelte";
     import Navbar from "../components/Navbar.svelte";
     import axios from "axios";
-    import cookie, { parse } from "cookie";
+    import cookie from "cookie";
     import { getDistanceYear } from "../helpers";
 
     const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-    let loading = true;
+    let loading;
     let token;
     let data;
     let doctors = [];
 
-    (async () => {
+    // (async () => {
+    //     token = cookie.parse(document.cookie).login;
+    //     const response = await axios.get(API_BASE_URL + "/me", {
+    //         headers: {
+    //             Authorization: "Bearer " + token,
+    //         },
+    //     });
+    //     data = response.data.data;
+
+    //     const responseDoctor = await axios.get(API_BASE_URL + "/doctors", {
+    //         headers: {
+    //             Authorization: "Bearer " + token,
+    //         },
+    //     });
+    //     doctors = responseDoctor.data.data;
+
+    //     loading = false;
+    // })();
+    
+    onDestroy(async () => {
+        loading = true;
+    })
+
+    onMount(async () => {
+        loading = true;
         token = cookie.parse(document.cookie).login;
         const response = await axios.get(API_BASE_URL + "/me", {
             headers: {
@@ -29,19 +55,36 @@
         doctors = responseDoctor.data.data;
 
         loading = false;
-    })();
+	});
 </script>
 
 <Loading bind:isLoading={loading} />
 
 <div>
     <!-- ========================================       HEADER      ========================================== -->
-    <div class="fixed top-0 left-1/2 -translate-x-1/2  h-12 w-[360px] mx-auto bg-[#1363DF] flex justify-around items-center z-50">
+    <div
+        class="fixed top-0 left-1/2 -translate-x-1/2 h-12 w-[360px] mx-auto bg-[#1363DF] flex justify-around items-center z-50"
+    >
         <div class="relative h-7 w-72 mx-auto bg-slate-100 rounded-2xl">
-            <input type="text" class="relative w-full h-full pl-8 rounded-lg outline-none text-xs">
-            <span class=" absolute w-5 h-5 top-1 left-2 z-10"><img src="/img/search.png" alt="icon search" class=" w-5 h-5"></span>
+            <input
+                type="text"
+                class="relative w-full h-full pl-8 rounded-lg outline-none text-xs"
+            />
+            <span class=" absolute w-5 h-5 top-1 left-2 z-10"
+                ><img
+                    src="/img/search.png"
+                    alt="icon search"
+                    class=" w-5 h-5"
+                /></span
+            >
         </div>
-        <div class=" w-7 h-7 mx-auto -ml-2 rounded-md bg-slate-100 "><img src="/img/notification.png" alt="icon notification" class=" w-4 h-4 mx-auto mt-1.5 "></div>
+        <div class=" w-7 h-7 mx-auto -ml-2 rounded-md bg-slate-100">
+            <img
+                src="/img/notification.png"
+                alt="icon notification"
+                class=" w-4 h-4 mx-auto mt-1.5"
+            />
+        </div>
     </div>
 
     <!-- ========================================     CARD INFO      ========================================== -->

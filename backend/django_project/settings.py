@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-_4_#r$0t=(vubw^wyhgj@h8$_!3@3y7tqfk3!-*au95-@_u+#&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bf99-112-215-65-128.ap.ngrok.io', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['bf99-112-215-65-128.ap.ngrok.io', 'localhost', '127.0.0.1', 'salism3.loca.lt']
 
 
 # Application definition
@@ -136,6 +136,7 @@ MEDIA_URL = '/media/'
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:5173',
     'http://127.0.0.1:5173',
+    'https://60a2-140-213-5-16.ngrok-free.app'
 ]
 
 # CORS_ALLOW_ALL_ORIGINS = True

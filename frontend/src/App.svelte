@@ -37,7 +37,7 @@
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/dashboard" component={Dashboard} />
-            <Route path="/search" component={SearchDoctor} />
+            <Route path="/dashboard/search" component={SearchDoctor} />
         </Router>
     </div>
 </main>
