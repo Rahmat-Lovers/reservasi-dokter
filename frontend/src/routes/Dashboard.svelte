@@ -39,10 +39,10 @@
     });
 </script>
 
-<Loading bind:isLoading={loading}/>
+<Loading bind:isLoading={loading} />
 
 <div class="mx-3">
-    <div class="h-[85vh] overflow-y-auto">
+    <div class="main overflow-y-auto">
         <div class="bg-[#3DB2FF] my-3 w-full rounded p-5 mt-5">
             <div class="flex items-center">
                 <div class="h-14 w-14 bg-white rounded-full" />
@@ -94,6 +94,7 @@
                                 .join(", ")}
                         </p>
                     </div>
+
 
                 {/each}
             </div>
