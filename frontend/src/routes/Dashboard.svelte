@@ -41,9 +41,9 @@
 
 <Loading bind:isLoading={loading} />
 
-<div class="mx-3">
-    <div class="main overflow-y-auto">
-        <div class="bg-[#3DB2FF] my-3 w-full rounded p-5 mt-5">
+<div>
+    <div class="main px-3 overflow-y-auto bg-white">
+        <div class="bg-[#3DB2FF] w-full rounded p-5">
             <div class="flex items-center">
                 <div class="h-14 w-14 bg-white rounded-full" />
                 <div class="ml-4 text-white">

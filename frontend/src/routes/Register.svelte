@@ -9,7 +9,7 @@
     const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 </script>
 
-<div>
+<div class="bg-white">
     <div class="min-h-screen flex items-center mb-5">
         <div class="w-full px-10 lg:px-0">
             <p class="text-[20px] text-center mb-10">Create to your account</p>

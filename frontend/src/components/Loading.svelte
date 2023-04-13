@@ -1,17 +1,5 @@
 <script>
     export let isLoading
-
-    const body = document.querySelector("body");
-    // body.classList.add("grayscale");
-
-    // setInterval(function() {
-    //     if (isLoading) {
-    //         body.classList.add("grayscale");
-    //     } else {
-    //         body.classList.remove("grayscale");
-    //         clearInterval(this);
-    //     }
-    // }, 500);
 </script>
 
 {#if isLoading}

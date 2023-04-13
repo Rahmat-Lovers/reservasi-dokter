@@ -2,7 +2,7 @@
     import { Link } from "svelte-routing";
 </script>
 
-<div class="min-h-[50px] flex justify-around overflow-x-auto border-t pt-2">
+<div class="min-h-[50px] flex justify-around overflow-x-auto border-t pt-2 bg-white">
     <Link to="/dashboard" class="flex-none block">
         <svg
             xmlns="http://www.w3.org/2000/svg"
