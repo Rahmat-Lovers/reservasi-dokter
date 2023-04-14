@@ -51,7 +51,7 @@
             />
         </svg>
     </Link>
-    <Link to="" class="flex-none block">
+    <Link to="/dashboard/profile" class="flex-none block">
         <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

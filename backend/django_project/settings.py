@@ -136,7 +136,7 @@ MEDIA_URL = '/media/'
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:5173',
     'http://127.0.0.1:5173',
-    'https://60a2-140-213-5-16.ngrok-free.app'
+    'https://sekeren.loca.lt'
 ]
 
 # CORS_ALLOW_ALL_ORIGINS = True

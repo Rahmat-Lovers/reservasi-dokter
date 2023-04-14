@@ -11,7 +11,7 @@
 
 <div class="bg-white">
     <div class="min-h-screen flex items-center mb-5">
-        <div class="w-full px-10 lg:px-0">
+        <div class="w-full px-10">
             <p class="text-[20px] text-center mb-10">Create to your account</p>
             <div>
                 <label for="username" class="text-[15px] text-[#5A5A5A]"
